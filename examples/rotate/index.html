@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="../../tests/assets/jquery-1.6.2.js"></script>
+		<script type="text/javascript" src="../../build/html2canvas.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				html2canvas( [ document.body ], {
+					logging: true,
+					onrendered: function(canvas) {
+						document.body.appendChild(canvas);
+					}
+				});
+			});
+		</script>
+		<title>
+			rotate test
+		</title>
+		<style type="text/css">
+			/* last modified: 1 Dec 98 */
+
+			html {
+				font: sans-serif;
+				background-color: white;
+				color: #333;
+			}
+
+			body img {
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+		</style>
+	</head>
+	<body>
+		<img src="kitten-small.jpg" width="500" height="516">
+	</body>
+</html>
