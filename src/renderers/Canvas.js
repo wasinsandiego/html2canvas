@@ -91,6 +91,7 @@ _html2canvas.Renderer.Canvas = function(options) {
     } else {
       for ( i = 0, queueLen = queue.length; i < queueLen; i+=1 ) {
         storageContext = queue.splice(0, 1)[0];
+        window.console.log("storageContext: ", storageContext);
         storageContext.canvasPosition = storageContext.canvasPosition || {};
 
         // set common settings for canvas

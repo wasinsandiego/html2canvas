@@ -343,6 +343,10 @@ _html2canvas.Parse = function (images, options) {
       );
   }
 
+  function getRotation(element) {
+    window.console.log("getRotation :: getCss: ", getCSS(element, "-webkit-transform"))
+  }
+
   function getBorderData(element) {
     return ["Top", "Right", "Bottom", "Left"].map(function(side) {
       return {
@@ -933,6 +937,10 @@ _html2canvas.Parse = function (images, options) {
     return canvas;
   }
 
+  function rotateImage(image, deg) {
+
+  }
+
   function setOpacity(ctx, element, parentStack) {
     var opacity = getCSS(element, "opacity") * ((parentStack) ? parentStack.opacity : 1);
     ctx.setVariable("globalAlpha", opacity);
@@ -948,6 +956,7 @@ _html2canvas.Parse = function (images, options) {
       opacity: setOpacity(ctx, element, parentStack),
       cssPosition: getCSS(element, "position"),
       borders: getBorderData(element),
+      rotation: getRotation(element),
       clip: (parentStack && parentStack.clip) ? _html2canvas.Util.Extend( {}, parentStack.clip ) : null
     };
 
